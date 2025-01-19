@@ -1,42 +1,10 @@
-@font-face {
-  font-family: "Helvetica";
-  src: url("./fonts/helvetica_regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica";
-  src: url("./fonts/helvetica_bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #212121;
-  font-family: "Helvetica", sans-serif;
-  letter-spacing: -1px;
-  color: #ffffff;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .button {
-  font-family: "Helvetica";
+  font-family: 'Helvetica';
   width: 344px;
   height: 69px;
   padding: 20px;
@@ -52,8 +20,14 @@ body {
   text-decoration: none;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   background-color: #ffffff;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: gray;
+  background-color: #343434;
 }
 
 .button.white-button {
@@ -331,6 +305,10 @@ body {
   margin-bottom: 15px;
   font-size: 16px;
   outline: none;
+}
+
+.order-form input.error {
+  border-color: red;
 }
 
 .footer {
