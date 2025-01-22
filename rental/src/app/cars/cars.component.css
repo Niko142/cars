@@ -4,7 +4,7 @@
 }
 
 .button {
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   width: 344px;
   height: 69px;
   padding: 20px;
@@ -329,4 +329,141 @@
   letter-spacing: 0;
   color: #ffffff;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1225px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .cars-content {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .cars-filter {
+    position: static;
+    margin-right: 0;
+  }
+
+  .cars-filter ul {
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .main-image {
+    max-width: 800px;
+    left: 400px;
+    top: 222px;
+  }
+
+  .cars-items {
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: row;
+  }
+
+  .cars-details {
+    margin-left: 0;
+  }
+
+  .car {
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: 400px;
+  }
+
+  .car img {
+    width: 100%;
+  }
+
+  .order form {
+    margin-left: auto;
+  }
+
+  .order img {
+    top: -25px;
+    left: auto;
+    right: 450px;
+  }
+
+  .cars-filter ul li {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-info h1 {
+    font-size: 55px;
+  }
+
+  .black-block {
+    display: none;
+  }
+
+  .menu {
+    margin-left: 50px;
+  }
+
+  .car {
+    max-width: 100%;
+  }
+
+  .menu ul {
+    gap: 25px;
+  }
+
+  .main-content {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .main-info h1 {
+    font-size: 50px;
+  }
+
+  .order h3 {
+    font-size: 50px;
+  }
+
+  .order-form {
+    width: 100%;
+  }
+
+  .order-form .button {
+    width: 100%;
+  }
+
+  .menu {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .header .container {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .main-info h1,
+  .cars h2,
+  .order h3 {
+    font-size: 46px;
+  }
+
+  .car-details p {
+    font-size: 14px;
+  }
+
+  .car-action ul li .car-price {
+    font-size: 16px;
+  }
+
+  .rights {
+    font-size: 10px;
+  }
 }

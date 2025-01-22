@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class CarsComponent {
   http = inject(HttpClient);
   cars: any = [];
+  mainImgStyle = {};
+  orderImgStyle = {};
 
   carsFilter = [
     {
@@ -56,6 +58,24 @@ export class CarsComponent {
     name: new FormControl(''),
     phone: new FormControl(''),
   });
+
+  @HostListener('document:scroll', ['$event'])
+  onScroll() {
+    const offsetRight = -576 + window.scrollY * 0.2;
+    this.mainImgStyle = { right: offsetRight + 'px' };
+  }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.orderImgStyle = {
+      transform:
+        'translate3d(' +
+        (e.clientX * 0.3) / 8 +
+        'px,' +
+        (e.clientY * 0.3) / 8 +
+        'px,0px)',
+    };
+  }
 
   ngOnInit() {
     this.cars = this.getCars('');

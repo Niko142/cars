@@ -25,7 +25,12 @@
           >Посмотреть автомобили</a
         >
       </div>
-      <img src="images/main-car.png" class="main-image" alt="Main-car" />
+      <img
+        src="images/main-car.png"
+        class="main-image"
+        alt="Main-car"
+        [style]="mainImgStyle"
+      />
     </div>
   </section>
   <div class="black-block"></div>
@@ -84,7 +89,7 @@
 </section>
 <section class="order" id="order">
   <div class="container">
-    <img src="images/order-car.png" alt="Order car" />
+    <img src="images/order-car.png" alt="Order car" [style]="orderImgStyle" />
     <form [formGroup]="orderForm">
       <h3>Забронируйте автомобиль</h3>
       <p>
